@@ -6,3 +6,4 @@ ENV ENABLE_BASIC_LOGGING=true
 # RUN env JVM_EXTRA_CMD_ARGS=-Xnoloa /work/configure.sh
 RUN /work/configure.sh
 RUN ls -lah /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/DefaultCell01
+RUN chmod -R 777 /opt/IBM/WebSphere
