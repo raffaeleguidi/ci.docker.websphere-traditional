@@ -5,5 +5,5 @@ COPY was-config.props /work/config/was-config.props
 COPY move_and_start.sh /move_and_start.sh
 ENV ENABLE_BASIC_LOGGING=true
 RUN env JVM_EXTRA_CMD_ARGS=-Xnoloa /work/configure.sh
-RUN mv /opt/IBM/WebSphere /opt/IBM/WebSphere-copy
+RUN mv /opt/IBM/WebSphere/ /opt/IBM/WebSphere-copy
 CMD ["/move_and_start.sh"]
