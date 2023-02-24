@@ -17,7 +17,7 @@
 
 # build image to extract the tar ball.
 FROM registry.access.redhat.com/ubi8/ubi as builder
-ARG WAS_VERSION=8.5.5.23
+ARG WAS_VERSION=8.5.5.24
 ARG WAS_TAR_BALL=was-${WAS_VERSION}.tar.gz
 COPY im/${WAS_TAR_BALL} /
 RUN tar -xzf "$WAS_TAR_BALL"
@@ -76,6 +76,7 @@ USER $USER
 
 RUN rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/config/cells/$CELL_NAME/nodes/$NODE_NAME/trust.p12 \
  && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/config/cells/$CELL_NAME/nodes/$NODE_NAME/key.p12 \
+ && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/config/cells/$CELL_NAME/nodes/$NODE_NAME/root-key.p12 \
  && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/etc/trust.p12 \
  && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/etc/key.p12
 

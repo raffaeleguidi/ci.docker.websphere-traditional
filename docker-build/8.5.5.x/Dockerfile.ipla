@@ -58,7 +58,7 @@ LABEL maintainer="Glenn Marcy <gmarcy@us.ibm.com>" \
       BuildLabel="$BUILDLABEL" \
       vendor="IBM" \
       name="IBM WebSphere Traditional" \
-      version="8.5.5.23" \
+      version="8.5.5.24" \
       summary="Image for WebSphere Traditional and UBI" \
       description="This image contains the WebSphere Traditional runtime with Red Hat UBI as the base OS."
 
@@ -107,6 +107,7 @@ USER $USER
 
 RUN rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/config/cells/$CELL_NAME/nodes/$NODE_NAME/trust.p12 \
  && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/config/cells/$CELL_NAME/nodes/$NODE_NAME/key.p12 \
+ && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/config/cells/$CELL_NAME/nodes/$NODE_NAME/root-key.p12 \
  && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/etc/trust.p12 \
  && rm /opt/IBM/WebSphere/AppServer/profiles/$PROFILE_NAME/etc/key.p12
 
